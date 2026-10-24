@@ -1473,3 +1473,76 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   OFFGRIDUSB.COM SUPPORT & PURCHASE CALL-TO-ACTION BANNERS
+   -------------------------------------------------------------------------- */
+.cta-buy-pill {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.22) 0%, rgba(16, 185, 129, 0.22) 100%);
+  border: 1px solid var(--amber);
+  color: #fde68a;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.cta-buy-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--emerald);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+}
+
+.support-cta-footer {
+  max-width: 1440px;
+  margin: 18px auto 28px auto;
+  padding: 0 22px;
+}
+
+.support-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 16px 22px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, rgba(17, 25, 39, 0.96) 52%, rgba(245, 158, 11, 0.14) 100%);
+  border: 1px solid var(--emerald-border);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.support-cta-title {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.support-cta-sub {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.btn-cta-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%);
+  color: #060911;
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-cta-gold:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}

@@ -16,6 +16,7 @@ echo    \____/^|_^| ^|_^|  \_____^|_^|  ^|_^|\__,_^|\____/^|_____/^|____/   OFFG
 echo --------------------------------------------------------------------------------
 echo   Universal Portable USB Edition  ^|  Zero Docker  ^|  Zero Cloud  ^|  Air-Gapped
 echo   Signed: @TheBlindHacker  *  @johndikeman  *  @organized-nick  *  OffGridUSB Team
+echo   [*] Support Us ^& Buy Pre-Built Drives: Please visit https://offgridusb.com !
 echo ================================================================================
 echo.
 

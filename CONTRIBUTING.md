@@ -57,3 +57,5 @@ PYTHONPATH=src python -m emyrge.web.app --host 127.0.0.1 --port 8000
 - **[@johndikeman](https://github.com/johndikeman)** (*John*) — Core Contributor & Distributed Systems / Hardware Engineering
 - **[@organized-nick](https://github.com/organized-nick)** (*Nick*) — Core Contributor & Product Strategy / Field Operations
 - **The OffGridUSB Product & Engineering Team** — [`offgridusb.com`](https://offgridusb.com) • [`github.com/TheBlindHacker/offgridUSB.com`](https://github.com/TheBlindHacker/offgridUSB.com)
+
+> **⚡ Support the Project:** Want to back open-source offline resilience *and* get a ready-to-run pre-flashed drive? **Please visit [https://offgridusb.com](https://offgridusb.com) and purchase an official OffGridUSB drive!**

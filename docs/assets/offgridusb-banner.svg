@@ -142,9 +142,13 @@
       <text x="504" y="51" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">+ Exo / RPC LAN Swarm</text>
     </g>
 
-    <!-- Bottom Signature Line -->
-    <text x="0" y="232" fill="#64748b" font-family="Consolas, 'SF Mono', monospace" font-size="11.5">
-      SIGNED // @TheBlindHacker  •  @johndikeman  •  @organized-nick  •  OffGridUSB Engineering Team
+    <!-- Bottom CTA Pill + Team Signature Line -->
+    <rect x="0" y="210" width="648" height="32" rx="8" fill="#064e3b" fill-opacity="0.55" stroke="#10b981" stroke-width="1.2" />
+    <text x="14" y="230" fill="#fbbf24" font-family="Consolas, 'SF Mono', monospace" font-size="11.5" font-weight="700">
+      SUPPORT US &amp; BUY PRE-BUILT DRIVES AT HTTPS://OFFGRIDUSB.COM
+    </text>
+    <text x="636" y="230" text-anchor="end" fill="#a7f3d0" font-family="Consolas, 'SF Mono', monospace" font-size="10.5">
+      @TheBlindHacker • @johndikeman • @organized-nick
     </text>
   </g>
 </svg>

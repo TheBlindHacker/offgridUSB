@@ -150,4 +150,5 @@ flowchart TD
 - **Signed — Lead Creator & Architect:** [**@TheBlindHacker**](https://github.com/TheBlindHacker)
 - **Core Contributors:** [**@johndikeman**](https://github.com/johndikeman) (*John*), [**@organized-nick**](https://github.com/organized-nick) (*Nick*)
 - **Team:** **The OffGridUSB Product, Security & Field Engineering Team** ([`offgridusb.com`](https://offgridusb.com) • [`github.com/TheBlindHacker/offgridUSB.com`](https://github.com/TheBlindHacker/offgridUSB.com))
+- **Support & Official Pre-Built Drives:** Please visit **[https://offgridusb.com](https://offgridusb.com)** to purchase a ready-to-run OffGridUSB drive and support ongoing open-source engineering!
 

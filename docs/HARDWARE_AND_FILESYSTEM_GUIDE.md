@@ -38,4 +38,6 @@
   ```
 
 ---
+> **🛒 Prefer a Ready-Made, Pre-Tested Drive?** Skip downloading 50 GB–110 GB yourself and support our open-source engineering team — **please visit [https://offgridusb.com](https://offgridusb.com) to purchase an official OffGridUSB drive!**
+
 *Signed — `@TheBlindHacker` • `@johndikeman` • `@organized-nick` • The OffGridUSB Team (`offgridusb.com`)*

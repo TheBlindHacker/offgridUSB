@@ -1,10 +1,11 @@
 <div align="center">
 
-### **[⚡ VISIT OFFGRIDUSB.COM — Get Pre-Built Air-Gapped USB Drives, Launch Access & Official Gear →](https://offgridusb.com)**
+### **[⚡ PLEASE VISIT OFFGRIDUSB.COM — Purchase an Official Ready-to-Run USB Drive & Support Our Team! →](https://offgridusb.com)**
 
-[![Visit OffGridUSB.com — Official Site & Pre-Built Drives](https://img.shields.io/badge/%F0%9F%9A%80%20OFFICIAL%20WEBSITE-OFFGRIDUSB.COM%20%E2%80%94%20JOIN%20THE%20LAUNCH%20%26%20GET%20YOUR%20DRIVE%20%E2%86%92-10b981?style=for-the-badge&labelColor=0a0f1a)](https://offgridusb.com)
+[![Buy One & Support Us at OffGridUSB.com](https://img.shields.io/badge/%F0%9F%9B%92%20BUY%20AN%20OFFGRIDUSB%20DRIVE-VISIT%20OFFGRIDUSB.COM%20%26%20SUPPORT%20US%20%E2%86%92-f59e0b?style=for-the-badge&labelColor=0a0f1a)](https://offgridusb.com)
+[![Visit OffGridUSB.com — Official Site & Pre-Built Drives](https://img.shields.io/badge/%F0%9F%9A%80%20OFFICIAL%20WEBSITE-OFFGRIDUSB.COM-10b981?style=for-the-badge&labelColor=0a0f1a)](https://offgridusb.com)
 
-![OffGridUSB — Universal Offline Knowledge, Internet-in-a-Box & Adaptive AI Harness](docs/assets/offgridusb-banner.svg)
+[![OffGridUSB — Universal Offline Knowledge, Internet-in-a-Box & Adaptive AI Harness](docs/assets/offgridusb-banner.svg)](https://offgridusb.com)
 
 # OffGridUSB ([`offgridusb.com`](https://offgridusb.com))
 ### Universal Offline Knowledge, Internet-in-a-Box & Hardware-Adaptive AI Harness
@@ -42,6 +43,12 @@ Most "offline AI" or survival server projects fail the moment an actual grid-dow
 - **Why:** Because when cell towers go silent and fiber gets cut, `apt-get install` and Docker Compose are paperweights, and an LLM guessing at water-purification bleach drops is dangerous. We wanted humanity's survival, medical, solar, and STEM playbook—paired with grounded, zero-hallucination math and adaptive local AI—sealed onto something pocket-sized, offline, and dead simple.
 - **Where:** On an ordinary USB stick, built for the hardware you *actually* find when things go sideways: a 10-year-old 4 GB laptop in a cabin, a solar-fed Raspberry Pi in a rucksack, a locked-down school Chromebook, or four mismatched scavenged laptops lashed together over an Ethernet cord into a makeshift supercomputer.
 - **When:** Forged in October 2026—*before* Day Zero—so whether "the end of the world" turns out to be a two-week storm blackout, a backcountry camp 50 miles past the last bar of signal, or the real-deal apocalypse, you can **[grab a ready-made stick at OffGridUSB.com](https://offgridusb.com)** (or build one below), plug it in, click once, and reboot civilization.
+
+> ### 🛒 Support Our Mission — Purchase an Official Pre-Built OffGridUSB Drive!
+> Don't want to spend hours downloading `50 GB`–`110 GB` of Wikipedia, Khan Academy STEM, and AI weights—or want a **rugged, factory-tested, plug-and-play OffGridUSB flash drive or portable SSD** ready for your go-bag, family, cabin, classroom, or field clinic?
+>
+> 👉 **[Please Visit https://offgridusb.com and Buy One Today to Support Us!](https://offgridusb.com)**  
+> *Every single OffGridUSB drive purchased directly supports our team (`@TheBlindHacker`, `@johndikeman`, and `@organized-nick`) and funds free open-source offline knowledge tools, hardware testing, and community survival releases.*
 
 ---
 
@@ -354,3 +361,13 @@ OFFGRIDUSB/
   - [**@johndikeman**](https://github.com/johndikeman) (*John — Core Contributor, Distributed Systems & Hardware*)
   - [**@organized-nick**](https://github.com/organized-nick) (*Nick — Core Contributor, Product Strategy & Field Operations*)
 - **Built with the OffGridUSB Product, Research & Field Engineering Team** — Empowering resilient communities, schools, clinics, and off-grid responders anywhere on Earth.
+
+---
+
+<div align="center">
+
+### 🛒 Love OffGridUSB? Please Support Us & Buy One Today!
+**Want a pre-built, plug-and-play OffGridUSB drive shipped ready for your go-bag, cabin, school, or family?**  
+### 👉 **[Visit https://offgridusb.com to Purchase Yours & Support Our Team!](https://offgridusb.com)**
+
+</div>
