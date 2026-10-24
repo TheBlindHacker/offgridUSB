@@ -1,0 +1,90 @@
+# ==============================================================================
+# OffGridUSB (offgridusb.com) — Git Ignore Configuration
+# Tracks only the core air-gapped runtime app, launchers, manifests, and docs.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Agent Scratchpads, Build Trackers & Working Notes
+# ------------------------------------------------------------------------------
+.agents/
+.gemini/
+.claude/
+.cursor/
+scratch/
+notes/
+*.scratch*
+PROJECT.md
+ORIGINAL_REQUEST.md
+TEST_INFRA.md
+TEST_READY.md
+PITCH_CHEATSHEET.md
+
+# ------------------------------------------------------------------------------
+# Build / USB Staging Scripts & Test Suite
+# ------------------------------------------------------------------------------
+scripts/
+MAKE_USB_DRIVES.bat
+tests/
+pytest.ini
+tmp_dl/
+build/
+dist/
+*.egg-info/
+
+# ------------------------------------------------------------------------------
+# Portable Runtime Binaries & Offline Knowledge / Model Packs
+# (Provisioned via `python -m emyrge.assets.fetch_assets`)
+# ------------------------------------------------------------------------------
+bin/
+data/
+*.gguf
+*.zim
+*.safetensors
+*.onnx
+*.tar.gz
+*.zip
+*.exe
+*.dll
+*.so
+*.so.*
+*.dylib
+*.pyd
+
+# ------------------------------------------------------------------------------
+# Runtime SQLite Vaults, Logs & Process Files
+# ------------------------------------------------------------------------------
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.log
+*.pid
+
+# ------------------------------------------------------------------------------
+# Python Bytecode, Caches & Virtual Environments
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+env/
+
+# ------------------------------------------------------------------------------
+# Secrets, OS Metadata & OneDrive Sync Conflict Copies
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+Desktop.ini
+*-DESKTOP-*
+*-JoeWorkTop*

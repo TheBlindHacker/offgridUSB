@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "description": "OffGridUSB (offgridusb.com) OpenZIM Offline Knowledge Archives (Micro Survival Packs through Full Wikipedia & Khan Academy)",
+  "archives": [
+    {
+      "id": "zimgit-water",
+      "name": "ZimGit Safe Water & Emergency Sanitation Manual",
+      "filename": "zimgit-water_en_2024-08.zim",
+      "tier": 0,
+      "category": "survival_water",
+      "size_bytes": 20971520,
+      "size_mb": 20.0,
+      "url": "https://download.kiwix.org/zim/other/zimgit-water_en_2024-08.zim"
+    },
+    {
+      "id": "zimgit-medicine",
+      "name": "ZimGit Austere Field Medicine & First Aid",
+      "filename": "zimgit-medicine_en_2024-08.zim",
+      "tier": 0,
+      "category": "medical",
+      "size_bytes": 70149734,
+      "size_mb": 66.9,
+      "url": "https://download.kiwix.org/zim/other/zimgit-medicine_en_2024-08.zim"
+    },
+    {
+      "id": "wikipedia-medicine-mini",
+      "name": "Wikipedia English Medicine Mini (Clinical Drug & Triage Reference)",
+      "filename": "wikipedia_en_medicine_mini_2026-10.zim",
+      "tier": 0,
+      "category": "medical",
+      "size_bytes": 174378188,
+      "size_mb": 166.3,
+      "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_medicine_mini_2026-10.zim"
+    },
+    {
+      "id": "khanacademy-en",
+      "name": "Khan Academy Offline STEM & K-12 Complete Pack",
+      "filename": "khanacademy_en_all_2024-05.zim",
+      "tier": 2,
+      "category": "education_stem",
+      "size_bytes": 4831838208,
+      "size_mb": 4608.0,
+      "url": "https://download.kiwix.org/zim/videos/khanacademy_en_all_2024-05.zim"
+    },
+    {
+      "id": "wikipedia-en-nopic-50gb",
+      "name": "Full English Wikipedia (No-Pictures Compact 50GB USB Edition)",
+      "filename": "wikipedia_en_all_nopic_2024-06.zim",
+      "tier": 2,
+      "category": "encyclopedia",
+      "size_bytes": 53687091200,
+      "size_mb": 51200.0,
+      "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_all_nopic_2024-06.zim"
+    },
+    {
+      "id": "wikipedia-en-maxi-110gb",
+      "name": "Full Illustrated English Wikipedia (Maxi 110GB Settlement Hub Edition)",
+      "filename": "wikipedia_en_all_maxi_2024-01.zim",
+      "tier": 4,
+      "category": "encyclopedia_illustrated",
+      "size_bytes": 118111600640,
+      "size_mb": 112640.0,
+      "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_all_maxi_2024-01.zim"
+    }
+  ]
+}
