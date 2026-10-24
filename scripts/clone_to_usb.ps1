@@ -184,13 +184,13 @@ while ($true) {
         $dirIndex++
         $srcDir = Join-Path $SourceRoot $dirName
         $dstDir = Join-Path $targetRoot $dirName
-        Write-Host ("    [2/2] ({0}/{1}) Syncing /{2} (MT:16)..." -f $dirIndex, $totalDirs, $dirName) -ForegroundColor Cyan
+        Write-Host ("    [2/2] ({0}/{1}) Syncing /{2} ..." -f $dirIndex, $totalDirs, $dirName) -ForegroundColor Cyan
 
         $rcArgs = @(
             $srcDir,
             $dstDir,
             "/E",
-            "/MT:16",
+            "/MT:4",
             "/R:2",
             "/W:1",
             "/NFL",
