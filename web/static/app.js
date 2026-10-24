@@ -347,8 +347,36 @@
       strip.innerHTML =
         `<span class="section-eyebrow">MOUNTED USB ZIM ARCHIVES:</span>` +
         zimFiles
-          .map((z, i) => `<span class="badge ${i === 0 ? "badge-emerald" : "badge-cyan"}">${escapeHtml(z)}</span>`)
+          .map((z, i) => {
+            const label =
+              typeof z === "object" && z !== null
+                ? `${z.name || z.filename || "archive.zim"}${z.size_mb ? ` (${z.size_mb} MB)` : ""}`
+                : String(z);
+            return `<span class="badge ${i === 0 ? "badge-emerald" : "badge-cyan"}">${escapeHtml(label)}</span>`;
+          })
           .join("");
+    }
+
+    // Bind live cross-platform binary readiness tooltips & status onto top architecture bar
+    const platforms = data.platforms_ready || svc.platforms_ready || [];
+    if (Array.isArray(platforms) && platforms.length > 0) {
+      const byId = {};
+      platforms.forEach((p) => {
+        if (p && p.id) byId[p.id] = p;
+      });
+      const bindArch = (sel, ids) => {
+        const el = $(sel);
+        if (!el) return;
+        const matched = ids.map((id) => byId[id]).filter(Boolean);
+        if (!matched.length) return;
+        const allReady = matched.some((m) => m.ready);
+        el.classList.toggle("ready", allReady);
+        el.title = matched.map((m) => `${m.name}: ${m.ready ? "READY" : "MISSING"} (${m.path})`).join(" | ");
+      };
+      bindArch("#archWin", ["windows_x86_64", "windows_arm64"]);
+      bindArch("#archMac", ["macos_arm64", "polyglot_llamafile"]);
+      bindArch("#archLinux", ["linux_arm64", "polyglot_llamafile"]);
+      bindArch("#archWasm", ["chromebook_wasm"]);
     }
 
     // Air-gap browser indicator
