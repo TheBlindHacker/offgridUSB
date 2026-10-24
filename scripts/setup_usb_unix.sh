@@ -125,6 +125,9 @@ copy_to_mount() {
             --exclude='.DS_Store' \
             --exclude='*-DESKTOP-*' \
             --exclude='*-JoeWorkTop*' \
+            --include='START_OFFGRIDUSB_WINDOWS.bat' \
+            --include='START_OFFGRIDUSB_MAC.command' \
+            --include='START_OFFGRIDUSB_LINUX.sh' \
             --include='START_EMYRGE_WINDOWS.bat' \
             --include='START_EMYRGE_MAC.command' \
             --include='START_EMYRGE_LINUX.sh' \
@@ -135,6 +138,8 @@ copy_to_mount() {
             --include='run_linux.sh' \
             --include='run_macos.command' \
             --include='README.md' \
+            --include='CONTRIBUTING.md' \
+            --include='PITCH_CHEATSHEET.md' \
             --include='docs/***' \
             --include='manifests/***' \
             --include='scripts/***' \
@@ -146,7 +151,7 @@ copy_to_mount() {
             "${ROOT_DIR}/" "${dst}/"
     else
         echo "[INFO] rsync not found; falling back to portable cp -R..."
-        for f in START_EMYRGE_WINDOWS.bat START_EMYRGE_MAC.command START_EMYRGE_LINUX.sh MAKE_USB_DRIVES.bat FORMAT_AND_SETUP_USB.bat DOWNLOAD_INTERNET_IN_A_BOX.bat run_windows.bat run_linux.sh run_macos.command README.md; do
+        for f in START_OFFGRIDUSB_WINDOWS.bat START_OFFGRIDUSB_MAC.command START_OFFGRIDUSB_LINUX.sh START_EMYRGE_WINDOWS.bat START_EMYRGE_MAC.command START_EMYRGE_LINUX.sh MAKE_USB_DRIVES.bat FORMAT_AND_SETUP_USB.bat DOWNLOAD_INTERNET_IN_A_BOX.bat run_windows.bat run_linux.sh run_macos.command README.md CONTRIBUTING.md PITCH_CHEATSHEET.md; do
             [[ -f "${ROOT_DIR}/${f}" ]] && cp -f "${ROOT_DIR}/${f}" "${dst}/"
         done
         for d in docs manifests scripts src web bin data; do
@@ -155,15 +160,15 @@ copy_to_mount() {
     fi
 
     mkdir -p "${dst}/data/vault" "${dst}/data/uploads" "${dst}/data/models" "${dst}/data/zim"
-    chmod +x "${dst}/START_EMYRGE_LINUX.sh" "${dst}/START_EMYRGE_MAC.command" "${dst}/run_linux.sh" "${dst}/run_macos.command" 2>/dev/null || true
+    chmod +x "${dst}/START_OFFGRIDUSB_LINUX.sh" "${dst}/START_OFFGRIDUSB_MAC.command" "${dst}/START_EMYRGE_LINUX.sh" "${dst}/START_EMYRGE_MAC.command" "${dst}/run_linux.sh" "${dst}/run_macos.command" 2>/dev/null || true
     sync
 
     echo ""
     echo "================================================================================"
     echo "[OK] OffGridUSB Ready at: ${dst}"
-    echo "     • Linux / Pi : ${dst}/START_EMYRGE_LINUX.sh"
-    echo "     • macOS      : ${dst}/START_EMYRGE_MAC.command"
-    echo "     • Windows    : ${dst}/START_EMYRGE_WINDOWS.bat"
+    echo "     • Linux / Pi : ${dst}/START_OFFGRIDUSB_LINUX.sh"
+    echo "     • macOS      : ${dst}/START_OFFGRIDUSB_MAC.command"
+    echo "     • Windows    : ${dst}/START_OFFGRIDUSB_WINDOWS.bat"
     echo "     • Chromebook : ${dst}/web/static/wasm/chromebook.html"
     echo "================================================================================"
 }

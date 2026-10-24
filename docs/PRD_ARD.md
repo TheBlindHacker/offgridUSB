@@ -122,3 +122,32 @@ flowchart TD
 
   P1 --> P2 --> P3 --> P4 --> P5 --> P6
 ```
+
+---
+
+## 6. USB Build, Filesystem & Multi-Drive Provisioning Architecture
+
+- **Recommended Filesystem:** **`exFAT` (`128 KB` allocation unit size)** so single `.zim` (`4.6 GB` Khan Academy, `50 GB` / `110 GB` Wikipedia) and `.gguf` (`3B`–`70B`) files exceed FAT32's 4.0 GB ceiling while remaining natively readable/writable across Windows, macOS, Linux, Raspberry Pi OS, and ChromeOS.
+- **Zero-Install Runtime Packaging:** Pure Python `3.12.8` Embeddable (`bin/windows_x86_64/python/`) + `kiwix-serve` (`:8081`) + native `llama-server` (`:8082`) + Cosmopolitan `llamafile` + POSIX `/tmp/emyrge_runtime/` auto-extraction for `noexec` USB mounts.
+- **Automated Tooling (`scripts/`):**
+  - `DOWNLOAD_INTERNET_IN_A_BOX.bat` / `scripts/download_internet_in_a_box.ps1` / `scripts/download_internet_in_a_box.sh` — Resumable HTTP byte-range provisioning with `ZIM\x04` and `GGUF` binary magic-header verification.
+  - `FORMAT_AND_SETUP_USB.bat` / `scripts/format_and_setup_usb.ps1` / `scripts/setup_usb_unix.sh` — Hard OS-drive safety blocks + guided `exFAT` formatting.
+  - `MAKE_USB_DRIVES.bat` / `scripts/clone_to_usb.ps1` — 16-thread `robocopy /MT:16` mass-cloning (`< 45s` per Tier 0 USB stick).
+
+---
+
+## 7. Document Sign-Off & Credits
+
+```text
+   ____   __  __  _____      _     _ _    _  _____ ____  
+  / __ \ / _|/ _|/ ____|    (_)   | | |  | |/ ____|  _ \ 
+ | |  | | |_| |_| |  __ _ __ _  __| | |  | | (___ | |_) |
+ | |  | |  _|  _| | |_ | '__| |/ _` | |  | |\___ \|  _ < 
+ | |__| | | | | | |__| | |  | | (_| | |__| |____) | |_) |
+  \____/|_| |_|  \_____|_|  |_|\__,_|\____/|_____/|____/ 
+```
+
+- **Signed — Lead Creator & Architect:** [**@TheBlindHacker**](https://github.com/TheBlindHacker)
+- **Core Contributors:** [**@johndikeman**](https://github.com/johndikeman) (*John*), [**@organized-nick**](https://github.com/organized-nick) (*Nick*)
+- **Team:** **The OffGridUSB Product, Security & Field Engineering Team** ([`offgridusb.com`](https://offgridusb.com) • [`github.com/TheBlindHacker/offgridUSB.com`](https://github.com/TheBlindHacker/offgridUSB.com))
+

@@ -1,8 +1,12 @@
 <div align="center">
 
+### **[⚡ VISIT OFFGRIDUSB.COM — Get Pre-Built Air-Gapped USB Drives, Launch Access & Official Gear →](https://offgridusb.com)**
+
+[![Visit OffGridUSB.com — Official Site & Pre-Built Drives](https://img.shields.io/badge/%F0%9F%9A%80%20OFFICIAL%20WEBSITE-OFFGRIDUSB.COM%20%E2%80%94%20JOIN%20THE%20LAUNCH%20%26%20GET%20YOUR%20DRIVE%20%E2%86%92-10b981?style=for-the-badge&labelColor=0a0f1a)](https://offgridusb.com)
+
 ![OffGridUSB — Universal Offline Knowledge, Internet-in-a-Box & Adaptive AI Harness](docs/assets/offgridusb-banner.svg)
 
-# OffGridUSB (`offgridusb.com`)
+# OffGridUSB ([`offgridusb.com`](https://offgridusb.com))
 ### Universal Offline Knowledge, Internet-in-a-Box & Hardware-Adaptive AI Harness
 
 **Zero Docker • Zero Cloud • Zero Installation • Single-Click Portable USB • 100% Air-Gapped**
@@ -32,17 +36,18 @@ Most "offline AI" or survival server projects fail the moment an actual grid-dow
 
 ---
 
-## Our Story — Who, Why, Where & When
+## Our Origin Story — Who, Why, Where & When
 
-- **Who:** Three off-grid builders, hackers, and unapologetic end-of-the-world fans—[`TheBlindHacker`](https://github.com/TheBlindHacker), [`johndikeman`](https://github.com/johndikeman), and [`organized-nick`](https://github.com/organized-nick)—who looked at the modern AI boom and asked the obvious question: *"Awesome... now what happens five minutes after the grid goes dark?"*
-- **Why:** Because when cell towers go silent and the cloud disappears, `apt-get install` and Docker Compose are useless, and an LLM guessing at water-purification bleach drops is dangerous. We wanted humanity's survival, medical, solar, and STEM playbook—paired with grounded, zero-hallucination math and adaptive local AI—sealed onto something indestructible, offline, and dead simple.
-- **Where:** On a humble pocket USB stick, built for the hardware you *actually* find when things go sideways: a 10-year-old 4 GB laptop in a cabin, a solar-fed Raspberry Pi in a rucksack, a locked-down school Chromebook, or four mismatched scavenged laptops lashed together over an Ethernet cord into a makeshift supercomputer.
-- **When:** Forged in October 2026—*before* Day Zero—so whether "the end of the world" turns out to be a two-week storm blackout, a backcountry camp 50 miles past the last bar of signal, or the real-deal apocalypse, you just plug in the drive, click once, and reboot civilization.
+- **Who:** Three off-grid builders, hackers, and unapologetic end-of-the-world fans—[**@TheBlindHacker**](https://github.com/TheBlindHacker), [**@johndikeman**](https://github.com/johndikeman), and [**@organized-nick**](https://github.com/organized-nick)—who looked at the modern cloud AI boom and asked the obvious question: *"Awesome... now what happens five minutes after the grid goes dark?"*
+- **Why:** Because when cell towers go silent and fiber gets cut, `apt-get install` and Docker Compose are paperweights, and an LLM guessing at water-purification bleach drops is dangerous. We wanted humanity's survival, medical, solar, and STEM playbook—paired with grounded, zero-hallucination math and adaptive local AI—sealed onto something pocket-sized, offline, and dead simple.
+- **Where:** On an ordinary USB stick, built for the hardware you *actually* find when things go sideways: a 10-year-old 4 GB laptop in a cabin, a solar-fed Raspberry Pi in a rucksack, a locked-down school Chromebook, or four mismatched scavenged laptops lashed together over an Ethernet cord into a makeshift supercomputer.
+- **When:** Forged in October 2026—*before* Day Zero—so whether "the end of the world" turns out to be a two-week storm blackout, a backcountry camp 50 miles past the last bar of signal, or the real-deal apocalypse, you can **[grab a ready-made stick at OffGridUSB.com](https://offgridusb.com)** (or build one below), plug it in, click once, and reboot civilization.
 
 ---
 
 ## Table of Contents
 
+- [Our Origin Story — Who, Why, Where & When](#our-origin-story--who-why-where--when)
 1. [1-Click Quick Start (Using a Ready OffGridUSB Stick)](#1-1-click-quick-start-using-a-ready-offgridusb-stick)
 2. [Build Your Own OffGridUSB From Scratch (3 Steps)](#2-build-your-own-offgridusb-from-scratch-3-steps)
    - [Step 1 — Choose & Prepare Your USB Hardware (`exFAT` Guide)](#step-1--choose--prepare-your-usb-hardware-exfat-guide)

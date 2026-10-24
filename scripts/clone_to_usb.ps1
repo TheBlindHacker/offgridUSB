@@ -15,6 +15,9 @@ $SystemDriveLetter = ($env:SystemDrive -replace ":", "").ToUpper()
 if (-not $SystemDriveLetter) { $SystemDriveLetter = "C" }
 
 $RootFiles = @(
+    "START_OFFGRIDUSB_WINDOWS.bat",
+    "START_OFFGRIDUSB_MAC.command",
+    "START_OFFGRIDUSB_LINUX.sh",
     "START_EMYRGE_WINDOWS.bat",
     "START_EMYRGE_MAC.command",
     "START_EMYRGE_LINUX.sh",
@@ -25,6 +28,7 @@ $RootFiles = @(
     "run_linux.sh",
     "run_macos.command",
     "README.md",
+    "CONTRIBUTING.md",
     "PITCH_CHEATSHEET.md"
 )
 

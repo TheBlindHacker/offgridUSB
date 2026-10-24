@@ -33,6 +33,16 @@
       "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_medicine_mini_2026-10.zim"
     },
     {
+      "id": "wikipedia-top-mini",
+      "name": "Wikipedia English Top Articles Mini (General Knowledge Encyclopedia)",
+      "filename": "wikipedia_en_top_mini_2026-09.zim",
+      "tier": 0,
+      "category": "encyclopedia",
+      "size_bytes": 296858160,
+      "size_mb": 283.1,
+      "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_en_top_mini_2026-09.zim"
+    },
+    {
       "id": "khanacademy-en",
       "name": "Khan Academy Offline STEM & K-12 Complete Pack",
       "filename": "khanacademy_en_all_2024-05.zim",

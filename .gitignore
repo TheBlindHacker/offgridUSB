@@ -1,6 +1,6 @@
 # ==============================================================================
 # OffGridUSB (offgridusb.com) — Git Ignore Configuration
-# Tracks only the core air-gapped runtime app, launchers, manifests, and docs.
+# Tracks the air-gapped runtime app, launchers, manifests, folder guides & docs.
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ PITCH_CHEATSHEET.md
 
 # ------------------------------------------------------------------------------
 # Build Artifacts & Local Test Caches
-# (Note: scripts/ and root .bat/.sh USB setup tools ARE tracked for users!)
+# (Note: scripts/, docs/, and root .bat/.sh/.command USB tools ARE tracked!)
 # ------------------------------------------------------------------------------
 tests/
 pytest.ini
@@ -32,10 +32,47 @@ dist/
 
 # ------------------------------------------------------------------------------
 # Portable Runtime Binaries & Offline Knowledge / Model Packs
-# (Provisioned via `python -m emyrge.assets.fetch_assets`)
+# Keep directory skeletons + README.md guides tracked in Git, ignore payloads!
 # ------------------------------------------------------------------------------
-bin/
-data/
+bin/*
+!bin/README.md
+!bin/windows_x86_64/
+bin/windows_x86_64/*
+!bin/windows_x86_64/README.md
+!bin/windows_arm64/
+bin/windows_arm64/*
+!bin/windows_arm64/README.md
+!bin/linux_x86_64/
+bin/linux_x86_64/*
+!bin/linux_x86_64/README.md
+!bin/linux_arm64/
+bin/linux_arm64/*
+!bin/linux_arm64/README.md
+!bin/macos_arm64/
+bin/macos_arm64/*
+!bin/macos_arm64/README.md
+!bin/macos_x86_64/
+bin/macos_x86_64/*
+!bin/macos_x86_64/README.md
+!bin/polyglot/
+bin/polyglot/*
+!bin/polyglot/README.md
+
+data/*
+!data/README.md
+!data/zim/
+data/zim/*
+!data/zim/README.md
+!data/models/
+data/models/*
+!data/models/README.md
+!data/vault/
+data/vault/*
+!data/vault/README.md
+!data/uploads/
+data/uploads/*
+!data/uploads/README.md
+
 *.gguf
 *.zim
 *.safetensors
