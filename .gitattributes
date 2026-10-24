@@ -1,0 +1,15 @@
+# Ensure POSIX shell & macOS command launchers always retain LF line endings
+*.sh      text eol=lf
+*.command text eol=lf
+
+# Ensure Windows batch & PowerShell scripts use CRLF
+*.bat     text eol=crlf
+*.ps1     text eol=crlf
+
+# Source & manifest files
+*.py      text eol=lf
+*.json    text eol=lf
+*.md      text eol=lf
+*.html    text eol=lf
+*.js      text eol=lf
+*.css     text eol=lf

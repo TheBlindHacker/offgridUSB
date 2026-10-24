@@ -309,16 +309,28 @@ class KiwixRunner:
             return Path(which_bin) if which_bin else None
 
         if sys_name == "darwin":
-            mac_cand = self.project_root / "bin" / "macos_arm64" / "kiwix" / "kiwix-serve"
-            if mac_cand.is_file() and mac_cand.stat().st_size > 1024:
-                return _ensure_posix_executable(mac_cand)
-            tar_bin = _extract_posix_tar_runtime(
-                self.project_root / "bin" / "macos_arm64" / "kiwix-tools_macos.tar.gz",
-                "macos_kiwix",
-                ("kiwix-serve",),
-            )
-            if tar_bin:
-                return tar_bin
+            if is_arm:
+                mac_cand = self.project_root / "bin" / "macos_arm64" / "kiwix" / "kiwix-serve"
+                if mac_cand.is_file() and mac_cand.stat().st_size > 1024:
+                    return _ensure_posix_executable(mac_cand)
+                tar_bin = _extract_posix_tar_runtime(
+                    self.project_root / "bin" / "macos_arm64" / "kiwix-tools_macos.tar.gz",
+                    "macos_arm64_kiwix",
+                    ("kiwix-serve",),
+                )
+                if tar_bin:
+                    return tar_bin
+            else:
+                mac_x64_cand = self.project_root / "bin" / "macos_x86_64" / "kiwix" / "kiwix-serve"
+                if mac_x64_cand.is_file() and mac_x64_cand.stat().st_size > 1024:
+                    return _ensure_posix_executable(mac_x64_cand)
+                tar_x64_bin = _extract_posix_tar_runtime(
+                    self.project_root / "bin" / "macos_x86_64" / "kiwix-tools_macos-x86_64.tar.gz",
+                    "macos_x86_64_kiwix",
+                    ("kiwix-serve",),
+                )
+                if tar_x64_bin:
+                    return tar_x64_bin
             which_bin = shutil.which("kiwix-serve")
             return Path(which_bin) if which_bin else None
 
@@ -597,6 +609,17 @@ class ModelRunner:
                 mac_nested = _find_binary_in_dir(self.project_root / "bin" / "macos_arm64" / "llama", ("llama-server",))
                 if mac_nested:
                     return _ensure_posix_executable(mac_nested)
+            else:
+                tar_x64 = _extract_posix_tar_runtime(
+                    self.project_root / "bin" / "macos_x86_64" / "llama-macos-x64.tar.gz",
+                    "macos_x86_64_llama",
+                    ("llama-server",),
+                )
+                if tar_x64:
+                    return tar_x64
+                mac_x64 = _find_binary_in_dir(self.project_root / "bin" / "macos_x86_64" / "llama", ("llama-server",))
+                if mac_x64:
+                    return _ensure_posix_executable(mac_x64)
             poly = self.project_root / "bin" / "polyglot" / "llamafile.exe"
             if poly.is_file() and poly.stat().st_size > 1024:
                 return poly

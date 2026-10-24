@@ -20,10 +20,9 @@ TEST_READY.md
 PITCH_CHEATSHEET.md
 
 # ------------------------------------------------------------------------------
-# Build / USB Staging Scripts & Test Suite
+# Build Artifacts & Local Test Caches
+# (Note: scripts/ and root .bat/.sh USB setup tools ARE tracked for users!)
 # ------------------------------------------------------------------------------
-scripts/
-MAKE_USB_DRIVES.bat
 tests/
 pytest.ini
 tmp_dl/

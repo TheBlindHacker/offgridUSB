@@ -139,8 +139,10 @@ echo Host: %HOST%  Port: %PORT%
 echo ============================================================================
 
 if exist "%SCRIPT_DIR%src\emyrge\web\app.py" (
+    set "BROWSER_HOST=%HOST%"
+    if "%BROWSER_HOST%"=="0.0.0.0" set "BROWSER_HOST=127.0.0.1"
     if "%HEADLESS%"=="0" (
-        start "" "http://%HOST%:%PORT%"
+        start "" powershell -NoProfile -WindowStyle Hidden -Command "for($i=0;$i -lt 30;$i++){try{$r=Invoke-WebRequest -Uri 'http://%BROWSER_HOST%:%PORT%/api/status' -UseBasicParsing -TimeoutSec 1 -ErrorAction Stop; if($r.StatusCode -eq 200){break}}catch{}; Start-Sleep -Milliseconds 500}; Start-Process 'http://%BROWSER_HOST%:%PORT%'"
     )
     %PYTHON_CMD% -m emyrge.web.app --host %HOST% --port %PORT%
 ) else (

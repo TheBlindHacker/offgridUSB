@@ -889,7 +889,7 @@ class EmyrgeHTTPHandler(BaseHTTPRequestHandler):
 
         try:
             if path == "/api/simulate-hardware":
-                prof = str(body.get("profile", "auto"))
+                prof = str(body.get("profile", body.get("preset", body.get("hardware", "auto"))))
                 status_payload = self.runtime.set_simulated_hardware(prof)
                 self._send_json(200, status_payload)
                 return

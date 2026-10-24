@@ -1209,7 +1209,10 @@
       (n) => !fl || String(n.topic || n.title || "").toLowerCase().includes(fl) || String(n.content || "").toLowerCase().includes(fl)
     );
     const ledger = state.memoryData.ledger.filter(
-      (e) => !fl || String(e.query || "").toLowerCase().includes(fl) || String(e.response || "").toLowerCase().includes(fl)
+      (e) =>
+        !fl ||
+        String(e.query || "").toLowerCase().includes(fl) ||
+        String(e.answer || e.response || "").toLowerCase().includes(fl)
     );
 
     $("#masterNotesCount").textContent = `${notes.length} Verified Notes`;
@@ -1223,11 +1226,12 @@
           const cits = Array.isArray(n.citations)
             ? n.citations.map((c) => c.raw_tag || c).join(" ")
             : n.citations || "[Source: Verified Offline Archive]";
+          const badgeLbl = n.model_badge || n.tier_origin || n.source_tier || "70B Master Note";
           return `
         <div class="vault-item master">
           <div class="vault-item-head">
             <span class="vault-item-title">${escapeHtml(n.topic || n.title || n.query)}</span>
-            <span class="badge badge-emerald">${escapeHtml(n.tier_origin || n.source_tier || "70B Master Note")}</span>
+            <span class="badge badge-emerald">${escapeHtml(badgeLbl)}</span>
           </div>
           <p class="muted-note" style="margin:4px 0 6px 0;color:var(--text-primary);">${escapeHtml(n.content || n.summary)}</p>
           <span class="mono" style="font-size:11.5px;color:var(--cyan);">${escapeHtml(cits)}</span>
@@ -1241,12 +1245,15 @@
       .map((e) => {
         const isPending = isItemPending(e);
         const tierLbl = e.model_tier !== undefined ? `Tier ${e.model_tier}` : e.tier || "Field Node";
+        const ansText = String(e.answer || e.response || "").trim();
+        const ansSnippet = ansText.length > 190 ? ansText.slice(0, 190) + "…" : ansText;
         return `
           <div class="vault-item ${isPending ? "pending" : "master"}">
             <div class="vault-item-head">
               <span class="vault-item-title">${escapeHtml(e.query)}</span>
               <span class="badge ${isPending ? "badge-amber" : "badge-emerald"}">${isPending ? "QUEUED FOR 70B DOCK" : "VERIFIED ✓"}</span>
             </div>
+            ${ansSnippet ? `<p class="muted-note" style="margin:4px 0 6px 0;font-size:12px;">${escapeHtml(ansSnippet)}</p>` : ""}
             <div class="mono" style="font-size:11.5px;color:var(--text-muted);">Captured on: ${escapeHtml(tierLbl)} • ${escapeHtml(e.created_at || e.timestamp || "USB Vault")}</div>
           </div>
         `;
@@ -1327,25 +1334,47 @@
     const items = state.visionItems.filter(
       (it) =>
         !fl ||
+        String(it.title || "").toLowerCase().includes(fl) ||
         String(it.filename || "").toLowerCase().includes(fl) ||
         String(it.ocr_text || "").toLowerCase().includes(fl) ||
+        String(it.vlm_notes || "").toLowerCase().includes(fl) ||
+        String(it.camera || "").toLowerCase().includes(fl) ||
         String(it.gps || "").toLowerCase().includes(fl) ||
         (it.tags || []).join(" ").toLowerCase().includes(fl)
     );
 
     $("#visionCardsGrid").innerHTML = items
-      .map(
-        (it) => `
+      .map((it) => {
+        const gpsLabel =
+          it.gps ||
+          (it.latitude !== undefined && it.latitude !== null && it.longitude !== undefined && it.longitude !== null
+            ? `${Number(it.latitude).toFixed(4)}, ${Number(it.longitude).toFixed(4)} • ${it.camera || "Field Cam"}`
+            : it.camera || "Local Bench Scan");
+        const dimsLabel = it.width && it.height ? ` (${it.width}×${it.height})` : "";
+        const badgeText = it.stage || (it.safety_check && String(it.safety_check).startsWith("PASS") ? "OCR + Safety ✓" : "Offline OCR");
+        const previewHtml = it.preview_url
+          ? `<img src="${escapeHtml(it.preview_url)}" alt="${escapeHtml(it.title || it.filename || "Field Capture")}" style="width:100%;max-height:135px;object-fit:contain;border-radius:6px;background:#080c14;border:1px solid rgba(56,189,248,0.18);margin-bottom:6px;" loading="lazy" />`
+          : "";
+        const notesHtml = it.vlm_notes
+          ? `<div class="muted-note" style="margin-top:6px;font-size:11.5px;color:var(--text-primary);">${escapeHtml(it.vlm_notes)}</div>`
+          : "";
+        const safetyHtml = it.safety_check
+          ? `<div class="mono" style="margin-top:4px;font-size:11px;color:var(--emerald);">🛡 ${escapeHtml(it.safety_check)}</div>`
+          : "";
+        return `
         <div class="vision-card">
+          ${previewHtml}
           <div class="vault-item-head">
-            <strong style="font-size:13.5px;color:#fff;">${escapeHtml(it.filename || "field_capture.png")}</strong>
-            <span class="badge badge-emerald">${escapeHtml(it.stage || "Offline OCR")}</span>
+            <strong style="font-size:13.5px;color:#fff;">${escapeHtml(it.title || it.filename || "field_capture.png")}</strong>
+            <span class="badge badge-emerald">${escapeHtml(badgeText)}</span>
           </div>
-          <div class="mono" style="font-size:11px;color:var(--cyan);">📍 ${escapeHtml(it.gps || "Local Bench Scan")} • ${escapeHtml(it.timestamp || "Indexed")}</div>
+          <div class="mono" style="font-size:11px;color:var(--cyan);">📍 ${escapeHtml(gpsLabel)}${escapeHtml(dimsLabel)} • ${escapeHtml(it.timestamp || "Indexed")}</div>
           <div class="vision-ocr-box">${escapeHtml(it.ocr_text || "OCR Text Indexed")}</div>
+          ${notesHtml}
+          ${safetyHtml}
         </div>
-      `
-      )
+      `;
+      })
       .join("");
   }
 
@@ -1371,7 +1400,9 @@
     } catch (_) {}
 
     const record = {
+      title: `Field Capture: ${filename}`,
       filename,
+      preview_url: dataUrl,
       stage: (saved && saved.stage) || "Stage 1 Offline OCR + SQLite FTS",
       gps: (saved && saved.gps) || "EXIF Verified • Air-Gapped USB",
       timestamp: "Just Now",
@@ -1426,8 +1457,12 @@
     }));
     const simulateDrop = $("#simulateNodeDropChk").checked;
 
+    let backendRpcCmd = "";
     try {
-      await apiPost("/api/swarm/plan", { nodes: checked, simulate_drop: simulateDrop });
+      const planRes = await apiPost("/api/swarm/plan", { nodes: checked, simulate_drop: simulateDrop });
+      if (planRes && planRes.rpc_command) {
+        backendRpcCmd = planRes.rpc_command;
+      }
     } catch (_) {}
 
     const activeNodes = simulateDrop && checked.length > 1 ? checked.slice(0, -1) : checked;
@@ -1497,6 +1532,11 @@
         <span class="badge badge-emerald">UNLOCKED: ${escapeHtml(unlockedModel)}</span>
       </div>
       <div class="layer-split-bar">${barSegs || `<div class="layer-seg" style="width:100%;background:#10b981;">Local USB Fallback Active</div>`}</div>
+      ${
+        backendRpcCmd
+          ? `<div class="vision-ocr-box" style="margin-top:10px;font-size:11.5px;color:var(--cyan);"><strong>Generated Coordinator Launch Command:</strong><br/>${escapeHtml(backendRpcCmd)}</div>`
+          : ""
+      }
       ${dropBanner}
     `;
   }
